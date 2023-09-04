@@ -6,5 +6,6 @@ COPY ./Cargo.lock ./Cargo.lock
 RUN cargo build --release
 
 FROM debian:bookworm-slim
-COPY --from=builder /usr/src/app/target/release/api1 /usr/local/bin/api1
-CMD ["api1"]
+COPY --from=builder /usr/src/app/target/release/http2 /usr/local/bin/http2
+COPY ./certs /certs
+CMD ["http2"]

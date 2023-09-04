@@ -256,14 +256,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "api2"
-version = "0.1.0"
-dependencies = [
- "actix-web",
- "openssl",
-]
-
-[[package]]
 name = "autocfg"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -583,6 +575,14 @@ dependencies = [
  "bytes",
  "fnv",
  "itoa",
+]
+
+[[package]]
+name = "http2"
+version = "0.1.0"
+dependencies = [
+ "actix-web",
+ "openssl",
 ]
 
 [[package]]

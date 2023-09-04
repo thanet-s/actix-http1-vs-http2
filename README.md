@@ -36,8 +36,8 @@ The load tests will automatically be run against both APIs once the services are
 
 ## Architecture
 
-- `api1`: Service running on Actix Web with HTTP/1.1 enabled
-- `api2`: Service running on Actix Web with HTTP/2 enabled
+- `http1`: Service running on Actix Web with HTTP/1.1 enabled
+- `http2`: Service running on Actix Web with HTTP/2 enabled
 
 ## Built With
 
