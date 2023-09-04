@@ -1,8 +1,8 @@
-# Load Testing Project
+# Actix Load Testing between HTTP/1.1 and HTTP/2
 
 ## Overview
 
-This project aims to benchmark the performance of two APIs: one running on HTTP/1.1 and another on HTTP/2. We use Actix Web for the APIs and run the services using Docker Compose. Load testing is performed automatically when the Docker Compose environment is started.
+This project aims to benchmark the performance of two APIs: one running on HTTP/1.1 and another on HTTP/2. We use Actix Web for the APIs and run the services using Docker Compose. Load testing is performed automatically when the Docker Compose environment is started. What difference between HTTP and HTTPS.
 
 ## Getting Started
 
@@ -17,13 +17,13 @@ This project aims to benchmark the performance of two APIs: one running on HTTP/
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/yourusername/load-testing-project.git
+    git clone https://github.com/thanet-s/actix-http1-vs-http2.git
     ```
 
 2. **Navigate to the Project Directory**
 
     ```bash
-    cd load-testing-project
+    cd actix-http1-vs-http2
     ```
 
 3. **Build and Run Docker Containers**
