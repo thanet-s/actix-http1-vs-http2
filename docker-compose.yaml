@@ -1,0 +1,24 @@
+version: '3'
+services:
+  api1:
+    build:
+      context: ./api1
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+  api2:
+    build:
+      context: ./api2
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+
+  h2load:
+    build:
+      context: ./h2load
+      dockerfile: Dockerfile
+    depends_on:
+      - api1
+      - api2
+    entrypoint: ["sh", "-c", "sleep 2; h2load -n100000 -c100 -m100 --h1 http://api1:8080; h2load -n100000 -c100 -m100 https://api2:8081"]
