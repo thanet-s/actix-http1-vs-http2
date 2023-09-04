@@ -15,10 +15,8 @@ services:
       - "8081:8081"
 
   h2load:
-    build:
-      context: ./h2load
-      dockerfile: Dockerfile
+    build: .
     depends_on:
       - http1
       - http2
-    entrypoint: ["sh", "-c", "sleep 2; h2load -n100000 -c100 -m100 --h1 http://http1:8080; h2load -n100000 -c100 -m100 https://http2:8081"]
+    entrypoint: ["sh", "-c", "sleep 5; h2load -n100000 -c100 -m10000 --h1 http://http1:8080; h2load -n100000 -c100 -m10000 https://http2:8081"]
