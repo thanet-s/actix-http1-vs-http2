@@ -1,0 +1,26 @@
+version: '3'
+services:
+  http1:
+    container_name: http1
+    build:
+      context: ./http1
+      dockerfile: Dockerfile
+    network_mode: "host"
+
+  haproxy:
+    container_name: haproxy
+    image: haproxy:2.8
+    network_mode: "host"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+      - ./http2/certs:/etc/haproxy/ssl:ro
+    depends_on:
+      - http1
+
+  h2load:
+    container_name: actix-http2-haproxy-test-h2load
+    build: .
+    network_mode: "host"
+    depends_on:
+      - haproxy
+    entrypoint: ["sh", "-c", "sleep 2; h2load -n10000000 -c100 -m1000 https://localhost:8081"]

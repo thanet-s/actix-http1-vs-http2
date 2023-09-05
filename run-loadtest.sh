@@ -10,8 +10,9 @@ if ! docker info >/dev/null 2>&1; then
 fi
 
 echo "Building Docker images..."
-docker-compose -f docker-compose-http1.yaml build
-docker-compose -f docker-compose-http2.yaml build
+docker-compose -f docker-compose-http1.yaml build --pull
+docker-compose -f docker-compose-http2.yaml build --pull
+docker-compose -f docker-compose-http2-haproxy.yaml build --pull
 echo "Docker images built."
 
 # Function to run Docker Compose
@@ -66,6 +67,22 @@ while true; do
         echo "h2load for HTTP/2 completed."
         show_h2load_logs "actix-http2-test"
         stop_docker_compose "docker-compose-http2.yaml" "actix-http2-test"
+        break
+    fi
+    sleep 5
+done
+
+# Run HTTP/2 HAPROXY service
+run_docker_compose "docker-compose-http2-haproxy.yaml" "actix-http2-haproxy-test"
+
+# Wait for h2load for HTTP/2 to complete
+while true; do
+    h2load_status=$(get_h2load_status "actix-http2-haproxy-test")
+    echo "waiting for h2load for HTTP/2 haproxy to complete..."
+    if [[ $h2load_status == Exited* ]]; then
+        echo "h2load for HTTP/2 haproxy completed."
+        show_h2load_logs "actix-http2-haproxy-test"
+        stop_docker_compose "docker-compose-http2-haproxy.yaml" "actix-http2-haproxy-test"
         break
     fi
     sleep 5
