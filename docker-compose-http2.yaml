@@ -13,4 +13,4 @@ services:
     network_mode: "host"
     depends_on:
       - http2
-    entrypoint: ["sh", "-c", "sleep 2; h2load -n10000000 -c100 -m10000 https://localhost:8081"]
+    entrypoint: ["sh", "-c", "sleep 2; h2load -n10000000 -c100 -m1000 https://localhost:8081"]
