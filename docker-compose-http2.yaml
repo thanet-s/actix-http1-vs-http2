@@ -1,0 +1,16 @@
+version: '3'
+services:
+  http2:
+    container_name: http2
+    build:
+      context: ./http2
+      dockerfile: Dockerfile
+    network_mode: "host"
+
+  h2load:
+    container_name: actix-http2-test-h2load
+    build: .
+    network_mode: "host"
+    depends_on:
+      - http2
+    entrypoint: ["sh", "-c", "sleep 2; h2load -n10000000 -c100 -m10000 https://localhost:8081"]
