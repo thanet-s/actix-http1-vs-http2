@@ -69,17 +69,18 @@ actix-http1-test-h2load  | progress: 60% done
 actix-http1-test-h2load  | progress: 70% done
 actix-http1-test-h2load  | progress: 80% done
 actix-http1-test-h2load  | progress: 90% done
+actix-http1-test-h2load  | progress: 100% done
 actix-http1-test-h2load  | 
 actix-http1-test-h2load  | 
-actix-http1-test-h2load  | finished in 12.45s, 803023.68 req/s, 585.85MB/s
-actix-http1-test-h2load  | requests: 10000000 total, 10000000 started, 9994301 done, 9994301 succeeded, 5699 failed, 5699 errored, 0 timeout
-actix-http1-test-h2load  | status codes: 9997105 2xx, 0 3xx, 0 4xx, 0 5xx
-actix-http1-test-h2load  | traffic: 7.12GB (7645640265) total, 743.44MB (779555478) headers (space savings 0.00%), 6.11GB (6556261456) data
+actix-http1-test-h2load  | finished in 5.21s, 1918803.53 req/s, 1.37GB/s
+actix-http1-test-h2load  | requests: 10000000 total, 10000000 started, 10000000 done, 10000000 succeeded, 0 failed, 0 errored, 0 timeout
+actix-http1-test-h2load  | status codes: 10000000 2xx, 0 3xx, 0 4xx, 0 5xx
+actix-http1-test-h2load  | traffic: 7.12GB (7650000000) total, 743.87MB (780000000) headers (space savings 0.00%), 6.11GB (6560000000) data
 actix-http1-test-h2load  |                      min         max         mean         sd        +/- sd
-actix-http1-test-h2load  | time for request:    14.42ms       2.17s    635.33ms    295.65ms    70.37%
-actix-http1-test-h2load  | time for connect:      132us    118.37ms     52.85ms     34.52ms    60.00%
-actix-http1-test-h2load  | time to 1st byte:   203.48ms    375.47ms    285.07ms     36.41ms    69.00%
-actix-http1-test-h2load  | req/s           :    8041.11    22798.36    13353.84     1947.76    88.00%
+actix-http1-test-h2load  | time for request:     1.70ms    242.95ms     52.71ms     18.30ms    91.23%
+actix-http1-test-h2load  | time for connect:      148us     19.58ms      8.03ms      5.47ms    62.00%
+actix-http1-test-h2load  | time to 1st byte:    75.64ms    210.23ms    131.98ms     30.96ms    68.00%
+actix-http1-test-h2load  | req/s           :   19210.89    20318.67    19504.44      176.24    80.00%
 [+] Running 2/2
  ✔ Container actix-http1-test-h2load  Removed                                                                                                                                                                                                                                                                     0.0s 
  ✔ Container http1                    Removed                                                                                                                                                                                                                                                                     0.4s 
@@ -109,17 +110,23 @@ actix-http2-test-h2load  | progress: 10% done
 actix-http2-test-h2load  | progress: 20% done
 actix-http2-test-h2load  | progress: 30% done
 actix-http2-test-h2load  | progress: 40% done
+actix-http2-test-h2load  | progress: 50% done
+actix-http2-test-h2load  | progress: 60% done
+actix-http2-test-h2load  | progress: 70% done
+actix-http2-test-h2load  | progress: 80% done
+actix-http2-test-h2load  | progress: 90% done
+actix-http2-test-h2load  | progress: 100% done
 actix-http2-test-h2load  | 
 actix-http2-test-h2load  | 
-actix-http2-test-h2load  | finished in 38.63s, 112663.69 req/s, 74.23MB/s
-actix-http2-test-h2load  | requests: 10000000 total, 4982090 started, 4352090 done, 4352090 succeeded, 5647910 failed, 5647910 errored, 0 timeout
-actix-http2-test-h2load  | status codes: 4362090 2xx, 0 3xx, 0 4xx, 0 5xx
-actix-http2-test-h2load  | traffic: 2.80GB (3006860083) total, 37.45MB (39272315) headers (space savings 89.77%), 2.65GB (2849935146) data
+actix-http2-test-h2load  | finished in 52.66s, 189881.40 req/s, 124.95MB/s
+actix-http2-test-h2load  | requests: 10000000 total, 10000000 started, 10000000 done, 10000000 succeeded, 0 failed, 0 errored, 0 timeout
+actix-http2-test-h2load  | status codes: 10000000 2xx, 0 3xx, 0 4xx, 0 5xx
+actix-http2-test-h2load  | traffic: 6.43GB (6900141532) total, 85.95MB (90122732) headers (space savings 89.76%), 6.09GB (6540000000) data
 actix-http2-test-h2load  |                      min         max         mean         sd        +/- sd
-actix-http2-test-h2load  | time for request:   188.86ms      19.24s       7.72s       6.71s    61.52%
-actix-http2-test-h2load  | time for connect:    67.93ms    339.59ms    222.43ms     72.52ms    62.00%
-actix-http2-test-h2load  | time to 1st byte:   929.63ms      13.76s       8.35s       2.75s    82.00%
-actix-http2-test-h2load  | req/s           :       0.00     2664.03     1323.98      990.97    62.00%
+actix-http2-test-h2load  | time for request:   127.04ms       1.33s    292.44ms    151.65ms    96.05%
+actix-http2-test-h2load  | time for connect:    71.02ms     95.50ms     81.34ms      6.65ms    62.00%
+actix-http2-test-h2load  | time to 1st byte:   177.20ms       1.28s    977.36ms    275.21ms    84.00%
+actix-http2-test-h2load  | req/s           :    1898.98     1921.51     1902.11        4.48    84.00%
 [+] Running 2/2
  ✔ Container actix-http2-test-h2load  Removed                                                                                                                                                                                                                                                                     0.0s 
  ✔ Container http2                    Removed                                                                                                                                                                                                                                                                     0.4s 
